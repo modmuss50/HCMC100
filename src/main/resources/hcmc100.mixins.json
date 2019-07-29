@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.hcmc100.mod.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "MixinClientConnection",
+    "MixinClientPlayNetworkHandler",
+    "MixinLivingEntity",
+    "MixinPlayerAdvancementTracker"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
