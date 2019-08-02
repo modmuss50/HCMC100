@@ -36,7 +36,10 @@ public class HttpExecutor {
 				request.setEntity(new ByteArrayEntity(data, ContentType.APPLICATION_JSON));
 
 				HttpResponse response = client.execute(request);
-				if(response.getStatusLine().getStatusCode() == HttpStatus.SC_OK && complete != null){
+				System.out.println(response.getStatusLine());
+				boolean successful = response.getStatusLine().getStatusCode() >= HttpStatus.SC_OK && response.getStatusLine().getStatusCode() <=HttpStatus.SC_PARTIAL_CONTENT;
+
+				if(successful && complete != null){
 					complete.run();
 				}
 			} catch (Exception e) {
